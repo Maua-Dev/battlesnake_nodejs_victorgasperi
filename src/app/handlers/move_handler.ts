@@ -1,16 +1,16 @@
 import { Request, Response } from "express"
 
-export function moveHandler(req: Request, res: Response) {
+export function snakeMovement(req: Request, res: Response) {
   try {
 
-    res.json({
-      apiversion: "1",
-      author: "Victor Gasperi",
-      color: "#FF1493",
-      head: "tiger-king",
-      tail: "weight",
-      version: "1.0.0"
-    })
+    console.log("Test");
+    const directions = ["up", "down", "left", "right"];
+    const i = Math.floor(Math.random() * directions.length);
+    const response = {
+        move: directions[i],
+        shout: `I'm moving ${directions[i]}!`
+    };
+    res.json(response);
 
   } catch (error: any) {
     console.error(error)

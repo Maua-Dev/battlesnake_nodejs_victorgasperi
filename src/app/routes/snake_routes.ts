@@ -1,6 +1,8 @@
 import { Router } from "express"
-import { moveHandler } from "../handlers/move_handler"
+import { snakeCustomization } from "../handlers/snake_customization"
+import { snakeMovement } from "../handlers/move_handler"
 
-export const router = Router()
+export const router = Router();
 
-router.get('/', moveHandler)
+router.get('/', snakeCustomization);
+router.post('/move', snakeMovement)
