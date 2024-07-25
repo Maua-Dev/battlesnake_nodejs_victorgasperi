@@ -2,12 +2,13 @@ import { Request, Response } from "express"
 
 export function moveHandler(req: Request, res: Response) {
   try {
+
     res.json({
       apiversion: "1",
-      author: "Maua-Dev",
-      color: "#8B0000",
+      author: "Victor Gasperi",
+      color: "#FF1493",
       head: "tiger-king",
-      tail: "hook",
+      tail: "weight",
       version: "1.0.0"
     })
 

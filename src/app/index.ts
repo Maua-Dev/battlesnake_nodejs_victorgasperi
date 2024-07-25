@@ -7,14 +7,15 @@ import { router } from './routes/snake_routes'
 
 const app = express();
 app.use(express.json());
-app.use(router)
+app.use(router);
+
 
 app.post('/start', (req: Request, res: Response) => {
     res.send("ok");
 });
 
 app.post('/move', (req: Request, res: Response) => {
-    console.log(req.body);
+    console.log("Test");
     const directions = ["up", "down", "left", "right"];
     const i = Math.floor(Math.random() * directions.length);
     const response = {
