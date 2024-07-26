@@ -3,7 +3,7 @@ config()
 import express, { Request, Response } from 'express';
 import ServerlessHttp from 'serverless-http';
 import { STAGE } from './enums/stage_enum';
-import { router } from './routes/snake_routes'
+import { router } from './routes/http_routes'
 
 const app = express();
 app.use(express.json());
