@@ -1,16 +1,16 @@
 import { Request, Response } from "express"
-import { get_body_coordinates, get_head_coordinates } from "../utils/game_info"
+import { getBodyCoordinates, getHeadCoordinates } from "../utils/game_info"
+import { choose_direction } from "../utils/move_logic";
 
 
 export function snakeMovement(req: Request, res: Response) {
   try {
-    const directions = ["up", "down", "left", "right"];
-    const i = Math.floor(Math.random() * directions.length);
+    let direction = choose_direction(req);
     const response = {
-        move: directions[i],
-        shout: `I'm moving ${directions[i]}!`
+        move: direction,
+        shout: `I'm moving ${direction}!`
     };
-    console.log(get_body_coordinates(req));
+
     res.json(response);
 
   } catch (error: any) {
