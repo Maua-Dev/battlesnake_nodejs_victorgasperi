@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { get_head_coordinates } from "../utils/game_info"
+import { get_body_coordinates, get_head_coordinates } from "../utils/game_info"
 
 
 export function snakeMovement(req: Request, res: Response) {
@@ -10,7 +10,7 @@ export function snakeMovement(req: Request, res: Response) {
         move: directions[i],
         shout: `I'm moving ${directions[i]}!`
     };
-    console.log(get_head_coordinates(req));
+    console.log(get_body_coordinates(req));
     res.json(response);
 
   } catch (error: any) {
