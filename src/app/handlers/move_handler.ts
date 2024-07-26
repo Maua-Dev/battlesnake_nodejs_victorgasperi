@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { get_head_coordinates } from "../utils/positions"
+import { get_head_coordinates } from "../utils/game_info"
 
 
 export function snakeMovement(req: Request, res: Response) {
