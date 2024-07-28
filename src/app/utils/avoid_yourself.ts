@@ -9,18 +9,16 @@ export function avoid_yourself(
   let directions_to_avoid: string[] = [];
   const futureMoves: possible_moves = possibleMovements(my_head);
 
-  my_body.forEach( item => {
-    if (futureMoves["up"]["y"] === item.y) directions_to_avoid.push("up");
-    if (futureMoves["down"]["y"] === item.y) directions_to_avoid.push("down");
-    if (futureMoves["left"]["x"] === item.x) directions_to_avoid.push("left");
-    if (futureMoves["right"]["x"] === item.x) directions_to_avoid.push("right");
-  });   
+  //TODO: fix this line. The includes does no work
+  Object.keys(futureMoves).forEach((direction, idx) => {
+    if (my_body.includes(Object.values(futureMoves)[idx]))
+      directions_to_avoid.push(direction);
+  });
 
-  let aux: string[] = next_move.filter( direction => {
+  let aux: string[] = next_move.filter((direction) => {
     return !directions_to_avoid.includes(direction);
   });
 
   console.log("EVITANDO CORPO: " + aux);
   return aux;
-
 }
