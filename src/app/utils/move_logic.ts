@@ -18,5 +18,5 @@ export function choose_direction(req: Request): string{
     next_move = avoid_walls(my_head, board_height, board_width, next_move);
     next_move = avoid_yourself(my_head, my_body, next_move);
 
-    return next_move[0];
+    return next_move[Math.floor(Math.random() * next_move.length)];
 }
