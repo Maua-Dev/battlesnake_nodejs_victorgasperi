@@ -9,10 +9,13 @@ export function avoid_yourself(
   let directions_to_avoid: string[] = [];
   const futureMoves: possible_moves = possibleMovements(my_head);
 
-  //TODO: fix this line. The includes does no work
+  // TODO: refactor this
   Object.keys(futureMoves).forEach((direction, idx) => {
-    if (my_body.includes(Object.values(futureMoves)[idx]))
-      directions_to_avoid.push(direction);
+    let currentMoveCoordinate = Object.values(futureMoves)[idx]
+    my_body.forEach( bodyCoordinate => {
+      if( bodyCoordinate.x === currentMoveCoordinate.x && bodyCoordinate.y === currentMoveCoordinate.y)
+        directions_to_avoid.push(direction)
+    })
   });
 
   let aux: string[] = next_move.filter((direction) => {
