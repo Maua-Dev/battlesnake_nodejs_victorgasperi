@@ -1,11 +1,11 @@
 import { Request } from "express"
-import { head } from "./info_interfaces"
+import { coordinate } from "./info_interfaces"
 
-export function getHeadCoordinates(req: Request): head {
+export function getHeadCoordinates(req: Request): coordinate {
     return req.body["you"]["head"];
 }
 
-export function getBodyCoordinates(req: Request): object[] {
+export function getBodyCoordinates(req: Request): coordinate[] {
     return req.body["you"]["body"];
 }
 

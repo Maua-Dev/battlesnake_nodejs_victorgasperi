@@ -1,4 +1,4 @@
-export interface head {
+export interface coordinate {
     "x": number,
     "y": number
 };

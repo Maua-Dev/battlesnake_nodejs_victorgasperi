@@ -1,6 +1,6 @@
-import { possible_moves } from "./info_interfaces";
+import { coordinate, possible_moves } from "./info_interfaces";
 
-export function possibleMovements(my_head: {"x": number, "y": number}): possible_moves {
+export function possibleMovements(my_head: coordinate): possible_moves {
     return {
         "up": {
             "x": my_head["x"],
