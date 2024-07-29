@@ -1,5 +1,5 @@
 import { Request } from "express"
-import { coordinate } from "./info_interfaces"
+import { coordinate, snake } from "./info_interfaces"
 
 export function getHeadCoordinates(req: Request): coordinate {
     return req.body["you"]["head"];
@@ -17,7 +17,7 @@ export function getBoardWidth(req: Request): number {
     return req.body["board"]["width"];
 }
 
-export function getOtherSnakes(req: Request): object {
+export function getOtherSnakes(req: Request): snake[] {
     return req.body["board"]["snakes"];
 }
 

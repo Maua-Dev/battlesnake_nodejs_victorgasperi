@@ -1,7 +1,7 @@
 import { coordinate, possible_moves } from "./info_interfaces";
 import { possibleMovements } from "./possible_movements";
 
-export function avoid_walls(my_head: coordinate, board_height: number, board_width: number, next_move: string[]): string[] {
+export function avoidWalls(my_head: coordinate, board_height: number, board_width: number, next_move: string[]): string[] {
 
     let directions_to_avoid: string[] = [];
     const futureMoves: possible_moves = possibleMovements(my_head);
