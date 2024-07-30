@@ -32,17 +32,24 @@ export function choose_direction(req: Request): string {
 
   let closestFoodDir = getClosestFoodDir(goToFood(my_head, food_coordinates, other_snakes));
 
-  if (
-    next_move.includes(
-        closestFoodDir
-    )
-    
-  ) {
-    console.log("GOING TO FOOD! Current Direction: " + closestFoodDir + " at turn: " + cur_turn);
-    return closestFoodDir;
-    
-  } else {
-    console.log("RANDOM MOVE!");
-    return next_move[Math.floor(Math.random() * next_move.length)];
-  }
+    try {
+        if (closestFoodDir !== "" && 
+            next_move.includes(
+                closestFoodDir
+            )
+            
+          ) {
+            console.log("GOING TO FOOD! Current Direction: " + closestFoodDir + " at turn: " + cur_turn);
+            return closestFoodDir;
+            
+          } else {
+            console.log("RANDOM MOVE!");
+            return next_move[Math.floor(Math.random() * next_move.length)];
+          }
+    } catch(error: any) {
+        console.log("erro de acesso");
+        return next_move[Math.floor(Math.random() * next_move.length)];
+    }
+
+  
 }
