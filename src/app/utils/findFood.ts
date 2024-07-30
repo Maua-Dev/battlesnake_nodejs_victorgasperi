@@ -4,7 +4,8 @@ import { findClosest } from "./findClosest";
 import { coordinate, snake } from "./info_interfaces";
 
 export function goToFood(my_head: coordinate, foods: coordinate[], snakes: snake[]): number[][] {
-    const currentGrid = new Grid(new mapGame(snakes).gameBoard);
+    const map = new mapGame(snakes);
+    const currentGrid = new Grid(map.gameBoard);
 
     const closestFood = findClosest(my_head, foods);
 
