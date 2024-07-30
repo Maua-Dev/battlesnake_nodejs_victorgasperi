@@ -24,3 +24,7 @@ export function getOtherSnakes(req: Request): snake[] {
 export function getFoodCoordinates(req: Request): coordinate[] { 
     return req.body["board"]["food"];
 }
+
+export function getCurrentTurn(req: Request): number {
+    return req.body["turn"];
+}
