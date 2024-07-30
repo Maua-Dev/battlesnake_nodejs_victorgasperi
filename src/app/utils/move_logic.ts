@@ -32,8 +32,11 @@ export function choose_direction(req: Request): string {
     next_move.includes(
       getClosestFoodDir(goToFood(my_head, food_coordinates, other_snakes))
     )
+    
   ) {
+    console.log("GOING TO FOOD!");
     return getClosestFoodDir(goToFood(my_head, food_coordinates, other_snakes));
+    
   } else {
     return next_move[Math.floor(Math.random() * next_move.length)];
   }
