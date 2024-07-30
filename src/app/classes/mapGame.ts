@@ -1,10 +1,14 @@
 import { snake } from "../utils/info_interfaces";
 
 export class mapGame {
-  private gameBoard: number[][]; 
+  private _gameBoard: number[][]; 
+
+  public get gameBoard(): number[][] {
+    return this._gameBoard;
+  }
 
   constructor(snakes: snake[]) {
-    this.gameBoard = this.mapCurrentBoard(snakes);
+    this._gameBoard = this.mapCurrentBoard(snakes);
   }
 
   private mapCurrentBoard(snakes: snake[]): number[][] {

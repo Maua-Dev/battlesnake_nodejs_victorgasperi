@@ -21,6 +21,6 @@ export function getOtherSnakes(req: Request): snake[] {
     return req.body["board"]["snakes"];
 }
 
-export function getFoodCoordinates(req: Request): object[] { 
+export function getFoodCoordinates(req: Request): coordinate[] { 
     return req.body["board"]["food"];
 }
