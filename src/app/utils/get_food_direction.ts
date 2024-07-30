@@ -1,6 +1,8 @@
 import { getDirection } from "./getDirection";
 
-export function getClosestFoodDir(path: number[][]): string {
+export function getClosestFoodDir(path: number[][]|null): string {
+    if(path === null) return "";
+
     let firstCoordinate = {
         x: path[0][0],
         y: path[0][1]

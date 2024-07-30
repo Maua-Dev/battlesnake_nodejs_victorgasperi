@@ -3,7 +3,12 @@ import { mapGame } from "../classes/mapGame";
 import { findClosest } from "./findClosest";
 import { coordinate, snake } from "./info_interfaces";
 
-export function goToFood(my_head: coordinate, foods: coordinate[], snakes: snake[]): number[][] {
+export function goToFood(
+  my_head: coordinate,
+  foods: coordinate[],
+  snakes: snake[]
+): number[][] | null{
+  try {
     const map = new mapGame(snakes);
     const currentGrid = new Grid(map.gameBoard);
 
@@ -11,12 +16,16 @@ export function goToFood(my_head: coordinate, foods: coordinate[], snakes: snake
 
     const finder = new AStarFinder();
     const path = finder.findPath(
-        my_head.x,
-        my_head.y,
-        closestFood.x,
-        closestFood.y,
-        currentGrid.clone()
+      my_head.x,
+      my_head.y,
+      closestFood.x,
+      closestFood.y,
+      currentGrid.clone()
     );
 
     return path;
+  } catch (error: any) {
+    console.log("ERRO DE TIPO");
+    return null;
+  }
 }
