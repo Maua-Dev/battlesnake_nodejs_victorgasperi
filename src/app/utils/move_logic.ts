@@ -28,7 +28,7 @@ export function choose_direction(req: Request): string {
   let other_snakes: snake[] = getOtherSnakes(req);
   let food_coordinates: coordinate[] = getFoodCoordinates(req);
   let cur_turn: number = getCurrentTurn(req);
-  let map: mapGame = new mapGame(
+  const map: mapGame = new mapGame(
     my_body,
     other_snakes,
     board_height,
@@ -44,17 +44,24 @@ export function choose_direction(req: Request): string {
 
   console.log("POSSIBLE SAFE MOVES AT TURN: " + cur_turn + " " + safeMoves);
 
-  const closestFoodDir: string = getClosestFoodDir(
-    pathToFood(my_head, food_coordinates, map)
-  );
-
-  
-
   if (my_health <= 60) {
-    console.log("HEALTH WARNING. LESS THAN 60 LIFEPOINTS: " + my_health + " turn " + cur_turn);
-    if(closestFoodDir === "") console.log("FOOD DIRECTION FAIL");
-    if(safeMoves.includes(closestFoodDir)) {
-      console.log("GOING TO FOOD. DIRECTION APPLIED at turn " + cur_turn + ": " + closestFoodDir);
+    console.log(
+      "HEALTH WARNING. LESS THAN 60 LIFEPOINTS: " +
+        my_health +
+        " turn " +
+        cur_turn
+    );
+    const closestFoodDir: string = getClosestFoodDir(
+      pathToFood(my_head, food_coordinates, map)
+    );
+    if (closestFoodDir === "") console.log("FOOD DIRECTION FAIL");
+    if (safeMoves.includes(closestFoodDir)) {
+      console.log(
+        "GOING TO FOOD. DIRECTION APPLIED at turn " +
+          cur_turn +
+          ": " +
+          closestFoodDir
+      );
       return closestFoodDir;
     }
   }
