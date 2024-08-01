@@ -1,4 +1,4 @@
-function generateGrid(rows: number, cols: number, initialValue: number = 0): number[][] {
+export function generateGrid(rows: number, cols: number, initialValue: number = 0): number[][] {
     const grid: number[][] = [];
     
     for (let i = 0; i < rows; i++) {

@@ -1,4 +1,5 @@
 import { coordinate, snake } from "../utils/info_interfaces";
+import { generateGrid } from "../utils/generate_grid";
 
 export class mapGame {
   private _gameBoard: number[][]; 
