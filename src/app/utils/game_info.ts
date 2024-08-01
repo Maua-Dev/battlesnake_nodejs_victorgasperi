@@ -9,6 +9,10 @@ export function getBodyCoordinates(req: Request): coordinate[] {
     return req.body["you"]["body"];
 }
 
+export function getCurrentHealth(req: Request): number {
+    return req.body["you"]["health"];
+}
+
 export function getBoardHeight(req: Request): number {
     return req.body["board"]["height"];
 }

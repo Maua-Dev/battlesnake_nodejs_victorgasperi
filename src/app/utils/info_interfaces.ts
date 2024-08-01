@@ -4,22 +4,10 @@ export interface coordinate {
 }
 
 export interface possible_moves {
-  up: {
-    x: number;
-    y: number;
-  };
-  down: {
-    x: number;
-    y: number;
-  };
-  left: {
-    x: number;
-    y: number;
-  };
-  right: {
-    x: number;
-    y: number;
-  };
+  up: coordinate;
+  down: coordinate;
+  left: coordinate;
+  right: coordinate;
 }
 
 export interface snake {
