@@ -67,6 +67,7 @@ export function choose_direction(req: Request): string {
   }
 
   console.log("LIFE AT TURN " + cur_turn + " is ok. health: " + my_health);
+  console.log("GRID AT TURN " + cur_turn + ": " + map.gameBoard);
   return safeMoves[0];
 
   // if (closestFoodDir !== "" && next_move.includes(closestFoodDir)) {
