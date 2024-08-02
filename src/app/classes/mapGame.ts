@@ -8,27 +8,24 @@ export class mapGame {
     return this._gameBoard;
   }
 
-  constructor(my_body: coordinate[], snakes: snake[], board_height: number, board_width: number) {
-    this._gameBoard = this.mapCurrentBoard(my_body, snakes, board_height, board_width);
+  constructor(snakes: snake[], board_height: number, board_width: number) {
+    this._gameBoard = this.mapCurrentBoard(snakes, board_height, board_width);
   }
 
-  private mapCurrentBoard(my_body: coordinate[], snakes: snake[], board_height: number, board_width: number): number[][] {
+  private mapCurrentBoard(snakes: snake[], board_height: number, board_width: number): number[][] {
 
   let gameBoard: number[][] = generateGrid(board_height, board_width);
 
     for (let i = 0; i < 11; i++) {
       let snakesWithXCoodinate: snake[] = snakes.filter((snake) =>
-        snake.body.forEach((bodyCoordinate) => bodyCoordinate.y === i)
+        snake.body.some((bodyCoordinate) => bodyCoordinate.y === i)
       );
       
       for (let j = 0; j < 11; j++) {
-        snakesWithXCoodinate.forEach((snakeThatHasX) => {
-          snakeThatHasX.body.forEach((bodyCoordinate) => {
-            if (bodyCoordinate.x === j) gameBoard[i][j] = 1;
+        snakesWithXCoodinate.forEach((snakeThatHasY) => {
+          snakeThatHasY.body.forEach((bodyCoordinate) => {
+            if (bodyCoordinate.x === j) gameBoard[bodyCoordinate.y][bodyCoordinate.x] = 1;
           });
-        });
-        my_body.forEach( coordinate => {
-          if(coordinate.y === i && coordinate.x === j) gameBoard[i][j] = 1;
         });
       }
     }

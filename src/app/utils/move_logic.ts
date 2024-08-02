@@ -29,7 +29,6 @@ export function choose_direction(req: Request): string {
   let food_coordinates: coordinate[] = getFoodCoordinates(req);
   let cur_turn: number = getCurrentTurn(req);
   const map: mapGame = new mapGame(
-    my_body,
     other_snakes,
     board_height,
     board_width
