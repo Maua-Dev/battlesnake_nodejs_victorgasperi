@@ -13,22 +13,18 @@ export class mapGame {
   }
 
   private mapCurrentBoard(snakes: snake[], board_height: number, board_width: number): number[][] {
-
-  let gameBoard: number[][] = generateGrid(board_height, board_width);
-
-    for (let i = 0; i < 11; i++) {
-      let snakesWithXCoodinate: snake[] = snakes.filter((snake) =>
-        snake.body.some((bodyCoordinate) => bodyCoordinate.y === i)
-      );
-      
-      for (let j = 0; j < 11; j++) {
-        snakesWithXCoodinate.forEach((snakeThatHasY) => {
-          snakeThatHasY.body.forEach((bodyCoordinate) => {
-            if (bodyCoordinate.x === j) gameBoard[bodyCoordinate.y][bodyCoordinate.x] = 1;
-          });
-        });
-      }
-    }
+    let gameBoard: number[][] = generateGrid(board_height, board_width);
+  
+    snakes.forEach(snake => {
+      snake.body.forEach(bodyCoordinate => {
+        // Transform the y-coordinate to match the bottom-left origin
+        let transformedY = board_height - 1 - bodyCoordinate.y;
+        if (transformedY >= 0 && transformedY < board_height && bodyCoordinate.x >= 0 && bodyCoordinate.x < board_width) {
+          gameBoard[transformedY][bodyCoordinate.x] = 1;
+        }
+      });
+    });
+  
     return gameBoard;
   }
 }
