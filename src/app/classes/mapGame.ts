@@ -1,4 +1,4 @@
-import { coordinate, snake } from "../utils/info_interfaces";
+import { coordinate, snake } from "../interfaces/info_interfaces";
 import { generateGrid } from "../utils/generate_grid";
 
 export class mapGame {

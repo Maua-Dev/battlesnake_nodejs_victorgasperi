@@ -3,7 +3,7 @@
 // 2 -> visitado
 
 import { dfs } from "./dfs";
-import { coordinate, possible_moves } from "./info_interfaces";
+import { coordinate, possible_moves } from "../interfaces/info_interfaces";
 import { possibleMovements } from "./possible_movements";
 
 export function findBestDirections(

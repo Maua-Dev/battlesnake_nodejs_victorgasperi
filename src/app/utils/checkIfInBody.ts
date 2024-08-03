@@ -1,4 +1,4 @@
-import { coordinate } from "./info_interfaces";
+import { coordinate } from "../interfaces/info_interfaces";
 
 
 export function checkIfInBody(body: coordinate[], currentMoveCoordinate: coordinate, directions_to_avoid: string[], direction: string) {

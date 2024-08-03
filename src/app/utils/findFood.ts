@@ -1,7 +1,7 @@
 import { Grid, AStarFinder } from "pathfinding";
 import { mapGame } from "../classes/mapGame";
 import { findClosest } from "./findClosest";
-import { coordinate, snake } from "./info_interfaces";
+import { coordinate, snake } from "../interfaces/info_interfaces";
 
 export function pathToFood(
   my_head: coordinate,
@@ -16,9 +16,9 @@ export function pathToFood(
     const finder = new AStarFinder();
     const path = finder.findPath(
       my_head.x,
-      my_head.y,
+      map.gameBoard.length - 1 - my_head.y,
       closestFood.x,
-      closestFood.y,
+      map.gameBoard.length - 1 - closestFood.y,
       currentGrid.clone()
     );
 

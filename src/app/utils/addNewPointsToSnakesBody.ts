@@ -1,4 +1,4 @@
-import { possible_moves, snake } from "./info_interfaces";
+import { possible_moves, snake } from "../interfaces/info_interfaces";
 import { possibleMovements } from "./possible_movements";
 
 export function addNewPointsToSnakesBody(snakes: snake[]): void {

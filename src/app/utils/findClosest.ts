@@ -1,4 +1,4 @@
-import { coordinate } from "./info_interfaces";
+import { coordinate } from "../interfaces/info_interfaces";
 
 export function findClosest(my_head: coordinate, objectives: coordinate[]): coordinate {
     const dist = (firstCoordinate: coordinate, secCoordinate: coordinate): number => Math.abs(firstCoordinate.x - secCoordinate.x) + Math.abs(firstCoordinate.y - secCoordinate.y);

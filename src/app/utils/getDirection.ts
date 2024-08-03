@@ -1,4 +1,4 @@
-import { coordinate } from "./info_interfaces";
+import { coordinate } from "../interfaces/info_interfaces";
 
 export function getDirection(firstCoordinate: coordinate, secCoordinate: coordinate): string {
     if (firstCoordinate.x < secCoordinate.x) return "right";

@@ -1,4 +1,4 @@
-import { coordinate, possible_moves } from "./info_interfaces";
+import { coordinate, possible_moves } from "../interfaces/info_interfaces";
 
 export function possibleMovements(my_head: coordinate): possible_moves {
     return {
