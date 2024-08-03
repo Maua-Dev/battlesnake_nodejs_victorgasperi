@@ -21,5 +21,3 @@ export interface snake {
   shout: string;
   customizations: object;
 }
-
-

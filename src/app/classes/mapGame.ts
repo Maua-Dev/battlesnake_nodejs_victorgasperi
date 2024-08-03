@@ -17,7 +17,6 @@ export class mapGame {
   
     snakes.forEach(snake => {
       snake.body.forEach(bodyCoordinate => {
-        // Transform the y-coordinate to match the bottom-left origin
         let transformedY = board_height - 1 - bodyCoordinate.y;
         if (transformedY >= 0 && transformedY < board_height && bodyCoordinate.x >= 0 && bodyCoordinate.x < board_width) {
           gameBoard[transformedY][bodyCoordinate.x] = 1;
