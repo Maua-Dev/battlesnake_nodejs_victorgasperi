@@ -33,10 +33,10 @@ export function findBestDirections(
         markVisited
       );
 
-      if (moves > 2 && moves > maxMoves) {
+      if (moves > 1 && moves > maxMoves) {
         maxMoves = moves;
         bestDirections.unshift(dir);
-      } else if (moves > 2) {
+      } else if (moves > 1) {
         bestDirections.push(dir);
       }
     }

@@ -1,5 +1,4 @@
 import { Request, Response } from "express"
-import { getBodyCoordinates, getHeadCoordinates } from "../utils/game_info"
 import { choose_direction } from "../utils/move_logic";
 
 
